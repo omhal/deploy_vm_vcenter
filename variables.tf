@@ -17,7 +17,7 @@ variable "template_name" { type = string }
 
 variable "vm_domain" { 
   type = string 
-  default = "itsec.local" 
+  default = "domain.local" 
 }
 variable "vm_netmask" { 
   type = number 
