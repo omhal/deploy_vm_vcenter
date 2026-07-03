@@ -1,0 +1,9 @@
+output "vm_ips" {
+  value = {
+    for name, vm in var.vms : name => vm.ip
+  }
+}
+
+output "ansible_inventory" {
+  value = "../ansible/inventory.ini"
+}

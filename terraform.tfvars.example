@@ -1,0 +1,26 @@
+vcenter_server   = "192.168.10.10"
+vcenter_user     = "administrator@vsphere.local"
+vcenter_password = "PasswordVcenter123!"
+
+datacenter    = "Datacenter"
+esxi_host     = "192.168.10.20"
+datastore     = "datastore1"
+network       = "VM Network"
+template_name = "ubuntu-template"
+
+vm_domain    = "lab.local"
+vm_interface = "ens160"
+vm_gateway   = "192.168.10.1"
+vm_dns       = ["8.8.8.8", "1.1.1.1"]
+
+vm_username = "elastic"
+vm_password = "Password123!"
+ssh_public_key = "ssh-ed25519 AAAA_REPLACE_WITH_YOUR_PUBLIC_KEY user@laptop"
+
+vms = {
+  elastic-01 = { ip = "192.168.10.101", roles = ["master", "data", "ingest"], cpu = 4, memory = 8192, heap_size = "4g", root_disk_size = 80, data_disk_size = 500 }
+  elastic-02 = { ip = "192.168.10.102", roles = ["master", "data", "ingest"], cpu = 4, memory = 8192, heap_size = "4g", root_disk_size = 80, data_disk_size = 500 }
+  elastic-03 = { ip = "192.168.10.103", roles = ["master", "data", "ingest"], cpu = 4, memory = 8192, heap_size = "4g", root_disk_size = 80, data_disk_size = 500 }
+  elastic-04 = { ip = "192.168.10.104", roles = ["data_cold"], cpu = 4, memory = 8192, heap_size = "4g", root_disk_size = 80, data_disk_size = 1000 }
+  elastic-05 = { ip = "192.168.10.105", roles = ["ml"], cpu = 4, memory = 8192, heap_size = "4g", root_disk_size = 80, data_disk_size = 500 }
+}
